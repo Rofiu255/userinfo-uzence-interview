@@ -51,14 +51,13 @@ export default function App() {
         )}
 
         {/* Input Form */}
-        <Card className="w-full sm:w-[26rem] p-6 space-y-4 bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 text-gray-900 rounded-2xl shadow-2xl">
+        <Card className="w-full sm:w-[28rem] p-6 space-y-6 bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 text-gray-900 rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-300">
           <h1
-            className="text-4xl font-extrabold text-center mb-4 drop-shadow-lg"
+            className="text-5xl font-extrabold text-orange-600 text-center mb-6 drop-shadow-2xl"
             style={{ color: "#e8491d", textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}
           >
             ADD USER
           </h1>
-
 
           <InputField
             label="Username"
@@ -74,22 +73,8 @@ export default function App() {
             value={email}
             onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
             type="text"
-            className="
-              w-90                /* 20rem width */
-              mx-auto             /* center horizontally */
-              rounded-2xl         /* smooth rounded corners */
-              border-none
-              bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-300
-              p-3                  /* padding */
-              text-gray-900
-              placeholder-gray-700
-              shadow-lg
-              focus:outline-none
-              focus:ring-4 focus:ring-pink-400
-              transition-all duration-300
-              mt-6                 /* top margin */
-            "
-
+            className="w-3/4 mx-auto rounded-xl border-2 border-transparent bg-gradient-to-r from-green-300 via-blue-300 to-purple-300 p-2 text-gray-900 placeholder-gray-700 shadow-lg focus:outline-none focus:ring-4 focus:ring-green-400 focus:border-transparent transition-all duration-300"
+            style={{ marginLeft: "5rem", marginRight: "5rem", borderRadius: "30px" }}
           />
 
           <InputField
@@ -99,8 +84,8 @@ export default function App() {
             onChange={(e: ChangeEvent<HTMLInputElement>) => setAge(e.target.value)}
             type="number"
             className="w-3/4 mx-auto rounded-xl border-2 border-transparent bg-gradient-to-r from-yellow-300 via-orange-300 to-red-300 p-2 text-gray-900 placeholder-gray-700 shadow-lg focus:outline-none focus:ring-4 focus:ring-yellow-400 focus:border-transparent transition-all duration-300"
+            style={{ marginLeft: "20px", marginRight: "20px", borderRadius: "30px", backgroundColor: "#f9c74f" }}
           />
-
 
           <Button
             type="button"
@@ -113,12 +98,13 @@ export default function App() {
         </Card>
 
         {/* DataTable */}
-        <Card className="w-full sm:w-[36rem] p-4 bg-gradient-to-r from-green-400 via-blue-400 to-purple-400 text-gray-900 rounded-2xl shadow-2xl">
+        <Card className="w-full sm:w-[36rem] p-6 mt-8 bg-gradient-to-r from-green-400 via-blue-400 to-purple-400 text-gray-900 rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-300">
           <DataTable<User>
             data={users}
             columns={columns}
             selectable
             onRowSelect={(rows) => console.log("Selected:", rows)}
+
           />
         </Card>
       </div>
