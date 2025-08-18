@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optional: add your custom styles */
+body {
+  background-color: #e8491d;
+  font-family: 'Inter', sans-serif;
+  margin: 15rem;
+}
