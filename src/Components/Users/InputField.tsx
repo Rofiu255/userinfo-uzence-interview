@@ -1,5 +1,5 @@
 import React, { useState, useId, ChangeEvent, FormEvent } from "react";
-import Button from "../UI/Button";
+import Button from "../UI/Button/Button";
 import ErrorModal from "../UI/ErrorModal";
 import Card from "../UI/Card";
 
@@ -13,6 +13,7 @@ interface InputFieldProps {
   clearable?: boolean;
   onSubmit?: (value: string) => void;
   className?: string;
+  style?: React.CSSProperties;
 }
 
 const InputField: React.FC<InputFieldProps> = ({

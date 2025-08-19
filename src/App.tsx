@@ -2,10 +2,10 @@ import React, { useState, ChangeEvent } from "react";
 import InputField from "./Components/Users/InputField";
 import DataTable, { Column } from "./Components/Users/DataTable";
 import Card from "./Components/UI/Card";
-import Button from "./Components/UI/Button";
+import Button from "./Components/UI/Button/Button";
 import ErrorModal from "./Components/UI/ErrorModal";
 
-interface User {
+interface User extends Record<string, unknown> {
   id: string;
   name: string;
   email: string;
@@ -33,7 +33,10 @@ export default function App() {
 
   const addUserHandler = (name: string, email: string, age: number) => {
     if (!name.trim() || !email.trim() || age <= 0) {
-      setError({ title: "Invalid input", message: "Please enter a valid name, email, and age (>0)." });
+      setError({
+        title: "Invalid input",
+        message: "Please enter a valid name, email, and age (>0).",
+      });
       return;
     }
     setUsers((prev) => [...prev, { id: Math.random().toString(), name, email, age }]);
@@ -45,9 +48,12 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-900 via-pink-600 to-indigo-700 flex items-center justify-center px-4 py-8">
       <div className="flex flex-col items-center w-full max-w-3xl mx-auto space-y-10">
-
         {error && (
-          <ErrorModal title={error.title} message={error.message} onConfirmError={() => setError(null)} />
+          <ErrorModal
+            title={error.title}
+            message={error.message}
+            onConfirmError={() => setError(null)}
+          />
         )}
 
         {/* Input Form */}
@@ -90,7 +96,18 @@ export default function App() {
           <Button
             type="button"
             className="w-3/4 mx-auto bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 text-white font-bold py-2 rounded-xl shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300"
-            style={{ backgroundColor: "#e8491d", color: "#fff", paddingLeft: "2rem", paddingRight: "2rem", marginTop: "1rem", margin: "3rem", height: "3rem", width: "20rem", borderRadius: "20px", border: "none"}}
+            style={{
+              backgroundColor: "#e8491d",
+              color: "#fff",
+              paddingLeft: "2rem",
+              paddingRight: "2rem",
+              marginTop: "1rem",
+              margin: "3rem",
+              height: "3rem",
+              width: "20rem",
+              borderRadius: "20px",
+              border: "none",
+            }}
             onClick={() => addUserHandler(name, email, Number(age))}
           >
             Add User
@@ -104,7 +121,6 @@ export default function App() {
             columns={columns}
             selectable
             onRowSelect={(rows) => console.log("Selected:", rows)}
-
           />
         </Card>
       </div>

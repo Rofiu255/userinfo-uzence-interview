@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./ErrorModal.module.css";
-import Button from "./Button.js";
+import Button from "./Button/Button.js";
 import Card from "./Card.js";
 
 interface ErrorModalProps {

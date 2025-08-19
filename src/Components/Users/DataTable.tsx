@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Card from "../UI/Card";
-import Button from "../UI/Button";
+import Button from "../UI/Button/Button";
 import ErrorModal from "../UI/ErrorModal";
 
 export interface Column<T> {
