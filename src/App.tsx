@@ -84,7 +84,7 @@ export default function App() {
             onChange={(e: ChangeEvent<HTMLInputElement>) => setAge(e.target.value)}
             type="number"
             className="w-3/4 mx-auto rounded-xl border-2 border-transparent bg-gradient-to-r from-yellow-300 via-orange-300 to-red-300 p-2 text-gray-900 placeholder-gray-700 shadow-lg focus:outline-none focus:ring-4 focus:ring-yellow-400 focus:border-transparent transition-all duration-300"
-            style={{ marginLeft: "20px", marginRight: "20px", borderRadius: "30px", backgroundColor: "#f9c74f" }}
+            style={{ marginLeft: "20px", marginRight: "20px", padding: "10px", borderRadius: "30px" }}
           />
 
           <Button
